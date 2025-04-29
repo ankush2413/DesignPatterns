@@ -268,21 +268,22 @@ class Logger:
         self.log(LogLevel.ERROR, message)
 
 
+
 # Main - Setup
 if __name__ == '__main__':
     # Using Chain of Responsibility approach (optional, can be skipped in favor of centralized Logger)
     console_appender = ConsoleAppender()
 
-    error_logger = ErrorLogger(LogLevel.ERROR, console_appender)
-    debug_logger = DebugLogger(LogLevel.DEBUG, console_appender)
-    info_logger = InfoLogger(LogLevel.INFO, console_appender)
+    # error_logger = ErrorLogger(LogLevel.ERROR, console_appender)
+    # debug_logger = DebugLogger(LogLevel.DEBUG, console_appender)
+    # info_logger = InfoLogger(LogLevel.INFO, console_appender)
 
-    info_logger.set_next(debug_logger)
-    debug_logger.set_next(error_logger)
+    # info_logger.set_next(debug_logger)
+    # debug_logger.set_next(error_logger)
 
-    info_logger.log_message(LogLevel.INFO, "Info using CoR")
-    info_logger.log_message(LogLevel.DEBUG, "Debug using CoR")
-    info_logger.log_message(LogLevel.ERROR, "Error using CoR")
+    # info_logger.log_message(LogLevel.INFO, "Info using CoR")
+    # info_logger.log_message(LogLevel.DEBUG, "Debug using CoR")
+    # info_logger.log_message(LogLevel.ERROR, "Error using CoR")
 
     print("\n--- Using Singleton Logger (Recommended) ---")
 
