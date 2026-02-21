@@ -8,7 +8,7 @@ public class User {
     private final BalanceSheet balanceSheet;
 
     public User(String name, String email) {
-        this.id = UUID.randomUUID().toString();;
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.email = email;
         this.balanceSheet = new BalanceSheet(this);
